@@ -8,16 +8,28 @@ import { createScene } from './scene';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('app')
-
-  // User needs to interact with the page before audio will play
-  /* container.addEventListener('click', toggleAudio); */
+  const pixelRatioSlider = document.getElementById('pixelRatioSlider');
+  const pixelRatioValue = document.getElementById('pixelRatioValue');
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setClearColor(0);
   renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(devicePixelRatio);
-  /* renderer.shadowMap.enabled = true; */
-  /* renderer.shadowMap.type = THREE.PCFShadowMap; */
+  /* renderer.setPixelRatio(0.8); */
+  // Update renderer pixel ratio and sizes on change
+  const savedRatio = parseFloat(localStorage.getItem('pixelRatio')) || 0.8;
+  renderer.setPixelRatio(savedRatio);
+  pixelRatioSlider.value = savedRatio;
+  pixelRatioValue.textContent = savedRatio.toFixed(2);
+
+  pixelRatioSlider.addEventListener('input', () => {
+    const ratio = parseFloat(pixelRatioSlider.value);
+    pixelRatioValue.textContent = ratio.toFixed(2);
+    renderer.setPixelRatio(ratio);
+    localStorage.setItem('pixelRatio', ratio);
+    resize();
+  });
+
+
   renderer.toneMapping = THREE.NeutralToneMapping;
   renderer.toneMappingExposure = 2;
   container.appendChild(renderer.domElement);
@@ -55,17 +67,3 @@ document.addEventListener('DOMContentLoaded', async () => {
   animate();
   resize();
 });
-
-/* window.toggleAudio = function () {
-  document.getElementById('app').removeEventListener('click', toggleAudio);
-
-  if (window.isAudioPlaying) {
-    window.isAudioPlaying = false;
-    document.getElementById('audio-status').src = "icon_muted.png";
-    document.getElementById('background-audio').pause();
-  } else {
-    window.isAudioPlaying = true;
-    document.getElementById('audio-status').src = "icon_playing.png";
-    document.getElementById('background-audio').play();
-  }
-} */
