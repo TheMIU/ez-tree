@@ -546,8 +546,8 @@ export class Tree extends THREE.Group {
     this.branchesMesh.geometry = g;
     this.branchesMesh.material.dispose();
     this.branchesMesh.material = mat;
-    this.branchesMesh.castShadow = true;
-    this.branchesMesh.receiveShadow = true;
+/*     this.branchesMesh.castShadow = true;
+    this.branchesMesh.receiveShadow = true; */
   }
 
   /**
@@ -719,8 +719,8 @@ export class Tree extends THREE.Group {
 
     this.leavesMesh.material = mat;
 
-    this.leavesMesh.castShadow = true;
-    this.leavesMesh.receiveShadow = true;
+/*     this.leavesMesh.castShadow = true;
+    this.leavesMesh.receiveShadow = true; */
   }
 
   get vertexCount() {

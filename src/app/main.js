@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderer.setClearColor(0);
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(devicePixelRatio);
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFShadowMap;
+  /* renderer.shadowMap.enabled = true; */
+  /* renderer.shadowMap.type = THREE.PCFShadowMap; */
   renderer.toneMapping = THREE.NeutralToneMapping;
   renderer.toneMappingExposure = 2;
   container.appendChild(renderer.domElement);

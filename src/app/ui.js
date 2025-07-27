@@ -158,8 +158,8 @@ export function setupUI(tree, environment, renderer, scene, camera, controls, in
 
   /** ENVIRONMENT */
 
-  const environmentFolder = tab.pages[0].addFolder({ title: 'Environment', expanded: false });
-  environmentFolder.addBinding(environment.skybox, 'sunAzimuth', { label: 'sunAngle', min: 0, max: 360 });
+ /*  const environmentFolder = tab.pages[0].addFolder({ title: 'Environment', expanded: false }); */
+  /* environmentFolder.addBinding(environment.skybox, 'sunAzimuth', { label: 'sunAngle', min: 0, max: 360 }); */
 
   /** INFO  */
 

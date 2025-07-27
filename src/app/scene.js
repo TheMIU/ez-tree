@@ -43,8 +43,8 @@ export async function createScene(renderer) {
   const tree = new Tree();
   tree.loadPreset('Ash Medium');
   tree.generate();
-  tree.castShadow = true;
-  tree.receiveShadow = true;
+  /* tree.castShadow = true;
+  tree.receiveShadow = true; */
   scene.add(tree);
 
   return {
