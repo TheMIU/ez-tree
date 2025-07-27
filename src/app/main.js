@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('app')
 
   // User needs to interact with the page before audio will play
-  container.addEventListener('click', toggleAudio);
+  /* container.addEventListener('click', toggleAudio); */
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setClearColor(0);
@@ -54,11 +54,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupUI(tree, environment, renderer, scene, camera, controls, 'Ash Medium');
   animate();
   resize();
-
-  document.getElementById('audio-status').style.display = 'block';
 });
 
-window.toggleAudio = function () {
+/* window.toggleAudio = function () {
   document.getElementById('app').removeEventListener('click', toggleAudio);
 
   if (window.isAudioPlaying) {
@@ -70,4 +68,4 @@ window.toggleAudio = function () {
     document.getElementById('audio-status').src = "icon_playing.png";
     document.getElementById('background-audio').play();
   }
-}
+} */
