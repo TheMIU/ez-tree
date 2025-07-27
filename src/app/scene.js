@@ -18,7 +18,6 @@ function paintUI() {
  */
 export async function createScene(renderer) {
   const scene = new THREE.Scene();
-  /* scene.fog = new THREE.FogExp2(0x94b9f8, 0.0015); */
 
   const environment = new Environment();
   scene.add(environment);
@@ -47,64 +46,6 @@ export async function createScene(renderer) {
   tree.castShadow = true;
   tree.receiveShadow = true;
   scene.add(tree);
-
-  // Add a forest of trees in the background
-  /* const forest = new THREE.Group();
-  forest.name = 'Forest'; */
-
-/*   const logoElement = document.getElementById('logo');
-  const progressElement = document.getElementById('loading-text');
-
-  logoElement.style.clipPath = `inset(100% 0% 0% 0%)`;
-  progressElement.innerHTML = 'LOADING... 0%'; */
-
-  /* const treeCount = 100;
-  const minDistance = 175;
-  const maxDistance = 500; */
-
-  /* function createTree() {
-    const r = minDistance + Math.random() * maxDistance;
-    const theta = 2 * Math.PI * Math.random();
-    const presets = Object.keys(TreePreset);
-    const index = Math.floor(Math.random() * presets.length);
-
-    const t = new Tree();
-    t.position.set(r * Math.cos(theta), 0, r * Math.sin(theta));
-    t.loadPreset(presets[index]);
-    t.options.seed = 10000 * Math.random();
-    t.generate();
-    t.castShadow = true;
-    t.receiveShadow = true;
-
-    forest.add(t);
-  } */
-
- /*  async function loadTrees(i) {
-    while (i < treeCount) {
-      createTree();
-
-      const progress = Math.floor(100 * (i + 1) / treeCount);
-
-      // Update progress UI
-      logoElement.style.clipPath = `inset(${100 - progress}% 0% 0% 0%)`;
-      progressElement.innerText = `LOADING... ${progress}%`;
-
-      // Wait for the next animation frame to continue
-      await paintUI();
-
-      i++;
-    }
-
-    // All trees are loaded, hide loading screen
-    await sleep(300);
-    logoElement.style.clipPath = `inset(0% 0% 0% 0%)`;
-    document.getElementById('loading-screen').style.display = 'none';
-  } */
-
-  // Start the tree loading process
- /*  await loadTrees(0); */
-
- /*  scene.add(forest); */
 
   return {
     scene,

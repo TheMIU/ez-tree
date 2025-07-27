@@ -160,7 +160,6 @@ export function setupUI(tree, environment, renderer, scene, camera, controls, in
 
   const environmentFolder = tab.pages[0].addFolder({ title: 'Environment', expanded: false });
   environmentFolder.addBinding(environment.skybox, 'sunAzimuth', { label: 'sunAngle', min: 0, max: 360 });
-  environmentFolder.addBinding(environment.grass, 'instanceCount', { label: 'grassCount', min: 0, max: 25000, step: 1 });
 
   /** INFO  */
 
