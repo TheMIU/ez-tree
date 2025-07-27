@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const clock = new THREE.Clock();
   function animate() {
     // Update time for wind sway shaders
-    const t = clock.getElapsedTime();
+    /* const t = clock.getElapsedTime();
     tree.update(t);
     scene.getObjectByName('Forest').children.forEach((o) => o.update(t));
-    environment.update(t);
+    environment.update(t); */
 
     controls.update();
     composer.render();

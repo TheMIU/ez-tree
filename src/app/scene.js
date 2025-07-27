@@ -18,7 +18,7 @@ function paintUI() {
  */
 export async function createScene(renderer) {
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x94b9f8, 0.0015);
+  /* scene.fog = new THREE.FogExp2(0x94b9f8, 0.0015); */
 
   const environment = new Environment();
   scene.add(environment);
@@ -49,20 +49,20 @@ export async function createScene(renderer) {
   scene.add(tree);
 
   // Add a forest of trees in the background
-  const forest = new THREE.Group();
-  forest.name = 'Forest';
+  /* const forest = new THREE.Group();
+  forest.name = 'Forest'; */
 
-  const logoElement = document.getElementById('logo');
+/*   const logoElement = document.getElementById('logo');
   const progressElement = document.getElementById('loading-text');
 
   logoElement.style.clipPath = `inset(100% 0% 0% 0%)`;
-  progressElement.innerHTML = 'LOADING... 0%';
+  progressElement.innerHTML = 'LOADING... 0%'; */
 
-  const treeCount = 100;
+  /* const treeCount = 100;
   const minDistance = 175;
-  const maxDistance = 500;
+  const maxDistance = 500; */
 
-  function createTree() {
+  /* function createTree() {
     const r = minDistance + Math.random() * maxDistance;
     const theta = 2 * Math.PI * Math.random();
     const presets = Object.keys(TreePreset);
@@ -77,9 +77,9 @@ export async function createScene(renderer) {
     t.receiveShadow = true;
 
     forest.add(t);
-  }
+  } */
 
-  async function loadTrees(i) {
+ /*  async function loadTrees(i) {
     while (i < treeCount) {
       createTree();
 
@@ -99,12 +99,12 @@ export async function createScene(renderer) {
     await sleep(300);
     logoElement.style.clipPath = `inset(0% 0% 0% 0%)`;
     document.getElementById('loading-screen').style.display = 'none';
-  }
+  } */
 
   // Start the tree loading process
-  await loadTrees(0);
+ /*  await loadTrees(0); */
 
-  scene.add(forest);
+ /*  scene.add(forest); */
 
   return {
     scene,
